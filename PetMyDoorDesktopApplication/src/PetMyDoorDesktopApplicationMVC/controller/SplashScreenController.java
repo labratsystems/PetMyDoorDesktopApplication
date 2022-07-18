@@ -4,6 +4,7 @@
  */
 package PetMyDoorDesktopApplicationMVC.controller;
 
+import PetMyDoorDesktopApplicationMVC.MainClass;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,7 +17,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  * FXML Controller class
@@ -26,14 +29,8 @@ import javafx.stage.Stage;
 public class SplashScreenController implements Initializable {
 
     @FXML
-    private Label lbl_loading;
-    
-    @FXML
-    private AnchorPane ancPane_splashScreen;
-    
-    @FXML
-    private AnchorPane ancPane_main;
-    
+    private AnchorPane anchorPane;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         splash();
@@ -51,17 +48,15 @@ public class SplashScreenController implements Initializable {
                 Platform.runLater(new Runnable(){
                     @Override
                     public void run(){
-                        System.out.println("Entrou aqui");
-                        ancPane_splashScreen.getScene().getWindow().hide();
-                        /*try {
-                            ancPane_main = FXMLLoader.load(getClass().getResource(""));
-                            Stage stage = new Stage();
-                            Scene scene = new Scene(ancPane_main);
-                            System.out.println("Entrou aqui");
-                            ancPane_splashScreen.getScene().getWindow().hide();
+                        try {
+                            MainClass mainClass = new MainClass();
+                            anchorPane.getScene().getWindow().hide();
+                            anchorPane = new AnchorPane();
+                            mainClass.goToDashboard(anchorPane);
+                            
                         } catch (IOException ex) {
                             Logger.getLogger(SplashScreenController.class.getName()).log(Level.SEVERE, null, ex);
-                        }*/
+                        }
                     }
                 });
             }

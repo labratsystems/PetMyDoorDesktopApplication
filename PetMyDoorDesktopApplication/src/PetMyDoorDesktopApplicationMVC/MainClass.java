@@ -13,6 +13,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -44,6 +45,21 @@ public class MainClass extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+    }
+    
+    public void goToDashboard(AnchorPane anchorPane) throws IOException{
+                            anchorPane = (AnchorPane) FXMLLoader.load(getClass().getResource("view/Dashboard.fxml"));
+                            
+                            Scene scene = new Scene(anchorPane);
+                            Stage stage = new Stage();
+        
+                            stage.setTitle("Pet My Door");
+                            stage.initStyle(StageStyle.UNDECORATED);
+                            stage.setScene(scene);
+                            stage.show();
+                            javafx.geometry.Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+                            stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
+                            stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
     }
     
 }
