@@ -1,0 +1,24 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.vbox_image{
+    -fx-background-image: url(../../img/animal-bicho-cachorro-cao-3009441.png);
+    -fx-background-size: cover;
+}
+
+.button{
+    -fx-background-color:  linear-gradient(to top right, #70B806, #508104);
+}
+
+.button:hover{
+    -fx-background-color:  linear-gradient(to top right, #508104, #70B806);
+}
+
+.lbl_login{
+    -fx-text-fill: linear-gradient(to top right, #70B806, #508104);
+}
+
+.lbl_login:hover{
+    -fx-text-fill:  linear-gradient(to top right, #508104, #70B806);
+}
