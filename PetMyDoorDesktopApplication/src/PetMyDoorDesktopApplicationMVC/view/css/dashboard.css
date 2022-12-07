@@ -1,0 +1,17 @@
+.hbox_banner{
+    -fx-background-image: url(../../img/background.png);
+    -fx-background-size: contain;
+}
+
+.hbox_menubars:hover{
+    -fx-border-color: #508104;
+    -fx-border-width: 0px 0px 0px 8px;
+}
+
+.button{
+    -fx-background-color:  linear-gradient(to top right, #70B806, #508104);
+}
+
+.button:hover{
+    -fx-background-color:  linear-gradient(to top right, #508104, #70B806);
+}
