@@ -1,0 +1,21 @@
+.vbox_image{
+    -fx-background-image: url(../../img/animal-cute-kitten-cat-9413.jpg);
+    -fx-background-size: 100%;
+    -fx-background-position: top;
+}
+
+.button{
+    -fx-background-color:  linear-gradient(to top right, #70B806, #508104);
+}
+
+.button:hover{
+    -fx-background-color:  linear-gradient(to top right, #508104, #70B806);
+}
+
+.lbl_register{
+    -fx-text-fill: linear-gradient(to top right, #70B806, #508104);
+}
+
+.lbl_register:hover{
+    -fx-text-fill:  linear-gradient(to top right, #508104, #70B806);
+}
