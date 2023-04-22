@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="500.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PetMyDoorDesktopApplicationMVC.controller.AddPetController">
+    <stylesheets>
+        <URL value="@/PetMyDoorDesktopApplicationMVC/view/css/addPet.css" />
+    </stylesheets>
+   <children>
+      <HBox prefHeight="500.0" prefWidth="800.0">
+         <children>
+            <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="400.0" styleClass="vbox_image" stylesheets="@css/addPet.css" />
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: #FFF;">
+               <children>
+                  <HBox alignment="TOP_RIGHT" prefHeight="140.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fx:id="img_minimize" fitHeight="45.0" fitWidth="45.0" onMouseClicked="#img_minimize_onMouseClicked" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets right="10.0" top="10.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@../img/minimize-green.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <ImageView fx:id="img_close" fitHeight="45.0" fitWidth="45.0" onMouseClicked="#img_close_onMouseClicked" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets right="10.0" top="10.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@../img/close-green.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Label fx:id="lbl_registerOrEditPet" contentDisplay="CENTER" text="Cadastrar Pet" textFill="#70b806" wrapText="true">
+                           <font>
+                              <Font name="Gill Sans Ultra Bold Condensed" size="36.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="50.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Label contentDisplay="CENTER" text="ID DO PET:" textFill="#70b806" wrapText="true">
+                           <font>
+                              <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="50.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <TextField fx:id="txt_petId" prefHeight="30.0" prefWidth="300.0" promptText="Id do pet" style="-fx-background-radius: 25;">
+                           <effect>
+                              <DropShadow color="#00000080" height="5.0" radius="2.0" width="5.0" />
+                           </effect>
+                           <font>
+                              <Font name="Gill Sans Ultra Bold Condensed" size="12.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets bottom="10.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Label contentDisplay="CENTER" text="NOME DO PET:" textFill="#70b806" wrapText="true">
+                           <font>
+                              <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="50.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                     <children>
+                        <TextField fx:id="txt_petName" prefHeight="30.0" prefWidth="300.0" promptText="Nome do pet" style="-fx-background-radius: 25;">
+                           <effect>
+                              <DropShadow color="#00000080" height="5.0" radius="2.0" width="5.0" />
+                           </effect>
+                           <font>
+                              <Font name="Gill Sans Ultra Bold Condensed" size="12.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets bottom="10.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT">
+                     <children>
+                        <Button fx:id="btn_deletePet" mnemonicParsing="false" onAction="#btn_deletePet_onAction" style="-fx-background-radius: 25;" stylesheets="@css/addPet.css" text="Excluir" textFill="WHITE" visible="false">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <DropShadow color="#00000080" height="5.0" radius="2.0" width="5.0" />
+                           </effect>
+                           <font>
+                              <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btn_registerOrEditPet" mnemonicParsing="false" onAction="#btn_registerOrEditPet_onAction" style="-fx-background-radius: 25;" stylesheets="@css/addPet.css" text="Cadastrar" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <DropShadow color="#00000080" height="5.0" radius="2.0" width="5.0" />
+                           </effect>
+                           <font>
+                              <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets right="48.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
